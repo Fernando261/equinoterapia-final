@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <header>
+        <header>
         <div class="header-top">
             <div class="logo">
                 <img src="imagenes/logo.png" alt="Logo Victoria CG">
@@ -24,19 +24,20 @@
                 
                 <a href="https://www.google.com/maps/place/Centro+Equinoterap%C3%A9utico+Victoria+CG/@21.4592677,-104.8566123,21z/data=!4m6!3m5!1s0x842731aec3f7dff3:0x2b245207c1e0afa1!8m2!3d21.4592799!4d-104.8565674!16s%2Fg%2F11rqgm_5tm?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank"><img src="imagenes/maps.png" alt="Maps"></a>
             </div>
-
+        
             <button class="menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
-<br><br>
+
+
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="areas_ambito.html">Equinoterapia y más...</a></li>
-                <li><a href="cuadro_clinico.html">Cómo ayuda <br>la Equinoterapia</a></li>
+                <li><a href="cuadro_clinico.html">Cómo ayuda<br> la Equinoterapia</a></li>
                 <li><a href="equinoterapeutas.html">Equinoterapéutas</a></li>
                 <li><a href="instalaciones.html">Instalaciones</a></li>
                 <li><a href="quienesSomos.html">Quiénes Somos</a></li>
@@ -45,7 +46,7 @@
         </nav>
     </header>
 
-    <div class="overlay" id="overlay"></div>
+<div class="overlay" id="overlay"></div>
 
 
 <div class="cards-horizontal">
@@ -181,19 +182,21 @@
 
 <script>
     const toggle = document.querySelector('.menu-toggle');
-    const menu= document.querySelector('.menu');
-    const links = document.querySelectorAll('menu li a');
+    const menu= document.querySelector('nav ul');
+    const links = document.querySelectorAll('nav ul li a');
     const overlay = document.getElementById('overlay');
 
     toggle.addEventListener('click', (e) => {
         e.stopPropagation();
         menu.classList.toggle('show');
+        toggle.classList.toggle('active');
         overlay.classList.toggle('show');
     });
 
     links.forEach(link => {
         link.addEventListener('click', () => {
             menu.classList.remove('show');
+            toggle.classList.remove('active');
             overlay.classList.remove('show');
         });
     });
@@ -203,12 +206,14 @@
             !menu.contains(e.target) &&
             e.target !== toggle) {
             menu.classList.remove('show');
+        toggle.classList.remove('active');
         overlay.classList.remove('show');
         }
     });
 
     overlay.addEventListener('click', () => {
         menu.classList.remove('show');
+        toggle.classList.remove('active');
         overlay.classList.remove('show');
     });
 </script>
