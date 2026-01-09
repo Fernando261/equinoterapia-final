@@ -30,20 +30,19 @@ header {
 
 /* Logo */
 .logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    text-align: center;
+    margin: 0;
 }
 
 .logo img {
-    height: 60px;
+    height: 200px;
 }
 
 /* Redes sociales */
 .redes-sociales {
     position: static;
     display: flex;
-    gap: 15px;
+    gap: 12px;
     justify-content: center;
     right: 20px;
     top: 50%;
@@ -55,8 +54,8 @@ header {
 }
 
 .redes-sociales img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     /*filter: brightness(0) saturate(100%) invert(25%) sepia(60%) saturate(300%) hue-rotate(340deg);*/
     transition: transform 0.3s;
 }
@@ -64,7 +63,6 @@ header {
 .redes-sociales img:hover {
     transform: scale(1.1);
 }
-
 /* Menú de navegación */
 nav ul {
     list-style: none;
