@@ -25,7 +25,11 @@
                 <a href="https://www.google.com/maps/place/Centro+Equinoterap%C3%A9utico+Victoria+CG/@21.4592677,-104.8566123,21z/data=!4m6!3m5!1s0x842731aec3f7dff3:0x2b245207c1e0afa1!8m2!3d21.4592799!4d-104.8565674!16s%2Fg%2F11rqgm_5tm?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank"><img src="imagenes/maps.png" alt="Maps"></a>
             </div>
         
-            
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
 
 
@@ -163,18 +167,7 @@
 
 
 <!-- FINALIZA FOOTER -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const links = document.querySelectorAll('nav ul li a');
-        const currentPage = window.location.pathname.split("/").pop();
 
-        links.forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('activo');
-            }
-        });
-    });
-</script>
 
 <script>
     const toggle = document.querySelector('.menu-toggle');
