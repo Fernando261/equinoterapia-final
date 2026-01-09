@@ -1,0 +1,448 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fffaf5;
+    color: #333;
+}
+
+/* ===== HEADER COMPLETO ===== */
+header {
+    background-color: white;
+    padding: 10px 20px 0 20px;
+    border-bottom: 4px solid #a66c45;
+}
+
+/* Logo al centro y redes sociales a la derecha */
+.header-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 10px 20px;
+    gap: 10px;
+}
+
+/* Logo */
+.logo {
+    text-align: center;
+    margin: 0;
+}
+
+.logo img {
+    height: 200px;
+}
+
+/* Redes sociales */
+.redes-sociales {
+    position: static;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.redes-sociales a {
+    margin-left: 12px;
+}
+
+.redes-sociales img {
+    width: 40px;
+    height: 40px;
+    /*filter: brightness(0) saturate(100%) invert(25%) sepia(60%) saturate(300%) hue-rotate(340deg);*/
+    transition: transform 0.3s;
+}
+
+.redes-sociales img:hover {
+    transform: scale(1.1);
+}
+
+
+/* Menú de navegación */
+nav ul {
+    list-style: none;
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #8a2c2c;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    font-family: "Cascadia Mono", "JetBrains Mono", "Fira Code", monospace;
+}
+
+nav ul li a:hover {
+    color: #d4a658;
+}
+
+nav ul li a.activo {
+    color: #d4a658;
+    border-bottom: 2px solid #d4a658;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #8a2c2c;
+    border-radius: 2px;
+    transition: 0.4s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(9px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-9px);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 500;
+}
+
+.overlay.show {
+    display: block;
+}
+
+.quienes-somos {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 20px 6px rgba(166, 108, 69, 0.2);
+}
+
+.quienes-somos h2 {
+    color: #8a2c2c;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.info-empresa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.info-empresa article {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.historia {
+    flex: 1 1 55%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(138, 44, 44, 0.1);
+    color: #333;
+    line-height: 1.6;
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+    box-shadow: 0 0 20px 10px rgba(111, 181, 107, 0.3);
+    border: 1px solid rgba(90, 127, 88, 0.4);
+    text-align: justify;
+    font-family: "Cascadia Mono ExtraLight", "JetBrains Mono", "Fira Code", monospace;
+}
+
+.img-quienes {
+    flex: 1 1 40%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.img-quienes img {
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.mision,
+.vision,
+.valores {
+    flex: 1 1 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(138, 44, 44, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px 10px rgba(111, 181, 107, 0.3);
+    border: 1px solid rgba(90, 127, 88, 0.4);
+    text-align: justify;
+    font-family: "Cascadia Mono ExtraLight", "JetBrains Mono", "Fira Code", monospace;
+}
+
+.mision h3, 
+.vision h3,
+.valores h3 {
+    color: #8a2c2c;
+    border-bottom: 2px solid #d4a658;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-family: "Cascadia Mono ExtraLight", "JetBrains Mono", "Fira Code", monospace;
+}
+
+.valores p strong {
+    color: #8a2c2c;
+    font-weight: 700;
+}
+
+/*Responsivo*/
+@media (max-width: 768px) {
+    .info-empresa {
+        flex-direction: column;
+    }
+
+    .historia, 
+    .img-quienes,
+    .mision,
+    .vision,
+    .valores {
+        flex: 1 1 100%;
+    }
+
+    .img-quienes img {
+        width: 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .img-quienes img {
+        width: 100%;
+    }
+}
+
+
+/*INICIA FOOTER*/
+/* ===== Evitar scroll horizontal global ===== */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: white;
+  color: #5a3c1a;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #f7e5d1;
+  padding: 30px 20px 15px;
+  color: #5a3c1a;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+.footer-info, .footer-redes, .footer-links {
+  flex: 1 1 250px;
+  box-sizing: border-box;
+}
+
+.footer-info h3,
+.footer-redes h3,
+.footer-links h3 {
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #8a2c2c;
+}
+
+.footer-info p,
+.footer-links ul {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: #5a3c1a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #d4a658;
+}
+
+.footer-redes a {
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.footer-redes img {
+  max-width: 28px;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.footer-redes a:hover img {
+  transform: scale(1.1);
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #d4a658;
+  padding-top: 15px;
+  font-size: 0.85rem;
+  color: #5a3c1a;
+}
+
+/* ===== Responsive para móviles ===== */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .footer-redes a {
+    margin-right: 12px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+    .header-top {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 120px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .redes-sociales {
+        order: 2;
+        gap: 12px;
+        justify-content: center;
+        position: static;
+        right: 20px;
+        top: 50%;
+        transform: none;
+        display: flex;
+        width: auto;
+        margin-top: 10px;
+    }
+
+    nav ul {
+        max-height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        background-color: white;
+        border-top: 2px solid #a66c45;
+        padding: 0;
+        transition: max-height 0.4s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.show {
+        max-height: 500px;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 12px;
+        font-size: 1rem;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        background-color: rgba(212, 166, 88, 0.15);
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        order: 3;
+    }
+
+    .logo img {
+        height: 120px;
+    }
+}
+
+
